@@ -3,11 +3,11 @@ import math
 
 
 #Student stat intake (prompts user for Name, GPA, Study Time, and Stress levels)
-student_name = input('Please enter your name:')
-current_gpa = float(input('Enter your current GPA:'))
-study_hours = int(input('Enter how many hours you study per week:'))
-social_points = int(input('How would you rate your social life on a scale of 1-100?:'))
-stress_level = int(input("Rate your stress level 1-100:"))
+student_name = input('Please enter your name: ')
+current_gpa = float(input('Enter your current GPA: '))
+study_hours = int(input('Enter how many hours you study per week: '))
+social_points = int(input('How would you rate your social life on a scale of 1-100?: '))
+stress_level = int(input("Rate your stress level 1-100: "))
 
 #Student stat display (displays Name, GPA, Study Time, and Stress levels)
 print('Welcome to the show! Here are your starting stats:')
@@ -65,6 +65,30 @@ elif decision == "Hard":  # Heavy load
         print("Hardcore Mode... are you sure? I would advise to not do that.")
         study_hours += 25
         stress_level += 30
+        
+class_list = ['Programming', 'Math', 'English', 'History', 'Physics']
+
+ 
+if choice in study:
+    if choice == "Programming":
+        current_gpa += 0.2
+        social_points -= 5
+        print("Programming is hard gang, stay locked.")
+    elif choice == "Math":
+        current_gpa += .3
+        social_points -= 2
+        print("Math... super slimey!")
+    elif choice == "English" and current_gpa >= 3.0:
+social_points += 10
+print("English speaker does English what a shocker!")
+elif choice == "History" or (choice == "English" and current_gpa < 3.0):
+current_gpa += 0.1
+social_points += 3
+print("History buff how interesting.")
+elif choice not in study:
+print("Invalid")
+if study is not "Pyshics":
+print("Bruhhhh")
 
 # Print updated stats
 print("\nUpdated stats after your decision:")
