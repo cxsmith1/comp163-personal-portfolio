@@ -1,20 +1,21 @@
 import math
 
+#Challenge 1
+current_number = int(input('Enter starting number: '))
+step_count = 0
 
-n = int(input('Enter a number: '))
-steps = 0
-
-while n > 1: #While the number entered is greater than our end goal, we run the loop
-    if n % 2 != 1: #if input is divisible by 2 and can get down to one, divide by two (next line)
-       n = int(n) / 2 
-       print(n, end=' ')
-       steps += 1
+while current_number > 1: #While the number entered is greater than our end goal, we run the loop
+    if current_number % 2 != 1: #if input is divisible by 2 and can get down to one, divide by two (next line)
+       current_number = int(current_number) / 2 
+       print(current_number, end=' ')
+       step_count += 1 #step count
     else:
-        n = (int(n) * 3) + 1
-        print(n, end=' ')
-        n = (int(n) / 2)
-        print(n, end=' ')
-        steps +=1
+        current_number = (int(n) * 3) + 1 #if input is odd, multiply by 3 and add one
+        print(current_number, end=' ')
+        current_number = (int(n) / 2) #divide by 2 after made even
+        print(current_number, end=' ')
+        step_count +=1 #step count
 
-round(n)
-print (f'\nSteps: {steps}')
+print (f'\nSteps: {step_count}') #total steps taken to get final answer
+
+#Challenge 2
