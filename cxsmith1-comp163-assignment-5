@@ -1,0 +1,20 @@
+import math
+
+
+n = int(input('Enter a number: '))
+steps = 0
+
+while n > 1: #While the number entered is greater than our end goal, we run the loop
+    if n % 2 != 1: #if input is divisible by 2 and can get down to one, divide by two (next line)
+       n = int(n) / 2 
+       print(n, end=' ')
+       steps += 1
+    else:
+        n = (int(n) * 3) + 1
+        print(n, end=' ')
+        n = (int(n) / 2)
+        print(n, end=' ')
+        steps +=1
+
+round(n)
+print (f'\nSteps: {steps}')
