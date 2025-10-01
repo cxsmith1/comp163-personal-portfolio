@@ -19,3 +19,22 @@ while current_number > 1: #While the number entered is greater than our end goal
 print (f'\nSteps: {step_count}') #total steps taken to get final answer
 
 #Challenge 2
+
+primefr = True #set to true unless proven otherwise
+n = int(input('Enter a number: '))
+newt = n-1
+print(f'Testing divisors from 2 to {newt}...')
+
+for i in range(2, newt): #for loop in range 2 to variable
+    if n % i == 0: #check if variable can be divided
+        print(f'{n} is not prime (divisible by {i})') #if it can it is now false
+        primefr = False
+            
+if primefr: 
+    print(f'{n} is prime!') #response cannot be divided
+
+# Challenge 3
+
+   
+        
+        
