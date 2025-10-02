@@ -22,19 +22,45 @@ print (f'\nSteps: {step_count}') #total steps taken to get final answer
 
 primefr = True #set to true unless proven otherwise
 n = int(input('Enter a number: '))
-newt = n-1
-print(f'Testing divisors from 2 to {newt}...')
+newt = n-1 #creates end of range by subtracting one
+print(f'Testing divisors from 2 to {newt}...') 
 
-for i in range(2, newt): #for loop in range 2 to variable
-    if n % i == 0: #check if variable can be divided
-        print(f'{n} is not prime (divisible by {i})') #if it can it is now false
-        primefr = False
+for i in range(2, newt): #creates range to search if prime
+    if n % i == 0: #if n is divisible its not prime
+        print(f'{n} is not prime (divisible by {i})')
+        primefr = False #makes primefr false
             
 if primefr: 
-    print(f'{n} is prime!') #response cannot be divided
+    print(f'{n} is prime!') 
+
+print('')
 
 # Challenge 3
 
-   
+#Challenge 3
+
+goober = ''
+collagen = ''
+goobgen = ''
+
+for goober in range(0, 11): #for the variable goober in the range 1-10
+    for collagen in range(0, 11): #for each column in range 1-10
+        goobgen = goober * collagen #creates our grid
+        if goobgen < 10:
+            bruh = "  " 
+        else:
+            if goobgen < 100: #if goobgen goes past our grid it wont print anything else
+                bruh  = " " #space for numbers
+        if collagen == 0: #if collagen is 0 start grid
+            if goober == 0:#same here
+                print("    ", end = '') #spaces out row
+            else:
+                print("  ", goober, end='') #ends row
+        elif goober == 0:
+            print("  ", collagen, end='')
+        else:
+            print(bruh, goobgen, end = '')
+    print()
+
         
         
