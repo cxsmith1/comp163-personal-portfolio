@@ -1,25 +1,32 @@
 import math
-
 #Challenge 1
-current_number = int(input('Enter starting number: '))
-step_count = 0
+print('=== Challenge 1: Collatz Conjecture ===')
 
-while current_number > 1: #While the number entered is greater than our end goal, we run the loop
-    if current_number % 2 != 1: #if input is divisible by 2 and can get down to one, divide by two (next line)
-       current_number = int(current_number) / 2 
-       print(current_number, end=' ')
-       step_count += 1 #step count
+n = int(input('Enter starting number: '))
+steps = 0
+sequence = []
+sequence.append(n)
+
+while n > 1: #While the number entered is greater than our end goal, we run the loop
+    if n % 2 == 0: #if input is divisible by 2 and can get down to one, divide by two (next line)
+        n = int(n) // 2  
+        sequence.append(n)  #tracks the number in sequence
+        steps += 1 #add one to step count each time the loop is run
     else:
-        current_number = (int(n) * 3) + 1 #if input is odd, multiply by 3 and add one
-        print(current_number, end=' ')
-        current_number = (int(n) / 2) #divide by 2 after made even
-        print(current_number, end=' ')
-        step_count +=1 #step count
+        n_bloopie = (int(n) * 3) + 1 #Use a temporary variable
+        sequence.append(n_bloopie) #prints the intermediate number 
+        steps += 1 # Count the first step 
+        n = n_bloopie // 2  # result of the division
+        sequence.append(n) #add the result of the division
+        steps += 1 #second step count for the division
 
-print (f'\nSteps: {step_count}') #total steps taken to get final answer
+print ("Sequence:", *sequence)
+print (f'Steps: {steps}')
+
+print('')
 
 #Challenge 2
-
+print('=== Challenge 2: Prime Number Checker ===')
 primefr = True #set to true unless proven otherwise
 n = int(input('Enter a number: '))
 newt = n-1 #creates end of range by subtracting one
@@ -35,32 +42,41 @@ if primefr:
 
 print('')
 
-# Challenge 3
-
-#Challenge 3
-
+#Challlenge 3
+#Challlenge 3
+print('=== Challenge 3: Multiplication Table ===')
+print('Multiplication Table:')
 goober = ''
 collagen = ''
 goobgen = ''
 
 for goober in range(0, 11): #for the variable goober in the range 1-10
     for collagen in range(0, 11): #for each column in range 1-10
-        goobgen = goober * collagen #creates our grid
-        if goobgen < 10:
-            bruh = "  " 
-        else:
-            if goobgen < 100: #if goobgen goes past our grid it wont print anything else
-                bruh  = " " #space for numbers
-        if collagen == 0: #if collagen is 0 start grid
-            if goober == 0:#same here
-                print("    ", end = '') #spaces out row
-            else:
-                print("  ", goober, end='') #ends row
+        
+        if goober == 0 and collagen == 0:
+            #print the blank corner space
+            print('    ', end = '') 
         elif goober == 0:
-            print("  ", collagen, end='')
+            #print column headers
+            print(f'{collagen:4}', end='')
+        elif collagen == 0:
+            #print row headers 
+            print(f'{goober:4}', end='') 
         else:
-            print(bruh, goobgen, end = '')
+            #print the product
+            goobgen = goober * collagen #creates our grid
+            # Use formatting to ensure all numbers align
+            print(f'{goobgen:4}', end = '')
+            
     print()
 
+
+    
+    
+    
+    
+        
+  
+    
         
         
